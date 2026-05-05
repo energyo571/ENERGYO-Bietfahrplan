@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#0d1117">
+<title>Versteigerung NRW · 06.05.2026</title>
+<style>
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--brd:rgba(255,255,255,0.08);--brd2:rgba(255,255,255,0.14);--tx:#e6edf3;--tx2:#8b949e;--tx3:#6e7681;--teal:#4db8a0;--tealb:rgba(77,184,160,0.12);--tealbr:rgba(77,184,160,0.3);--amb:#f0a500;--ambb:rgba(240,165,0,0.12);--ambbr:rgba(240,165,0,0.3);--blu:#58a6ff;--blub:rgba(88,166,255,0.1);--red:#f85149;--redb:rgba(248,81,73,0.1);--redbr:rgba(248,81,73,0.3);--grn:#3fb950;--grnb:rgba(63,185,80,0.1);}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overscroll-behavior:none;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;background:var(--bg);color:var(--tx);padding-bottom:env(safe-area-inset-bottom,20px);}
+.hdr{background:var(--bg2);border-bottom:1px solid var(--brd);padding:14px 16px 10px;position:sticky;top:0;z-index:100;}
+.htop{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.logo{background:#0d1b2a;color:var(--teal);font-size:11px;font-weight:700;padding:4px 9px;border-radius:6px;letter-spacing:.05em;border:1px solid var(--tealbr);}
+.htitle{font-size:14px;font-weight:700;color:var(--tx);margin-left:8px;}
+.budg{font-size:12px;font-weight:700;color:var(--teal);background:var(--tealb);border:1px solid var(--tealbr);padding:4px 10px;border-radius:20px;}
+.hmeta{font-size:11px;color:var(--tx3);margin-bottom:10px;line-height:1.5;}
+.filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.filters::-webkit-scrollbar{display:none;}
+.fb{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;font-size:13px;font-weight:600;padding:7px 16px;border-radius:20px;border:1px solid var(--brd2);background:transparent;color:var(--tx2);cursor:pointer;white-space:nowrap;-webkit-appearance:none;touch-action:manipulation;}
+.fb.on{background:var(--teal);color:#0d1117;border-color:var(--teal);}
+.sbar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border-bottom:1px solid var(--brd);}
+.sc{background:var(--bg);padding:10px 6px;text-align:center;}
+.sv{font-size:13px;font-weight:700;color:var(--tx);line-height:1;margin-bottom:3px;}
+.sl{font-size:9px;color:var(--tx3);line-height:1.3;}
+.leg{display:flex;gap:14px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--brd);}
+.leg::-webkit-scrollbar{display:none;}
+.li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx3);white-space:nowrap;}
+.ld{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.cards{padding:12px 16px;display:flex;flex-direction:column;gap:10px;}
+.card{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;overflow:hidden;}
+.p1{border-left:3px solid var(--teal);}
+.p2{border-left:3px solid var(--amb);}
+.p3{border-left:3px solid var(--blu);}
+.px{border-left:3px solid var(--red);}
+.ch{padding:14px 14px 10px;cursor:pointer;-webkit-user-select:none;user-select:none;touch-action:manipulation;}
+.r1{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px;}
+.lotnr{font-size:10px;color:var(--tx3);margin-bottom:3px;}
+.cn{font-size:15px;font-weight:700;color:var(--tx);line-height:1.3;margin-bottom:2px;}
+.cs{font-size:12px;color:var(--tx2);line-height:1.4;}
+.pr{text-align:right;flex-shrink:0;}
+.pl{font-size:10px;color:var(--tx3);margin-bottom:2px;}
+.pm{font-size:17px;font-weight:700;color:var(--tx);white-space:nowrap;}
+.ps{font-size:11px;font-weight:600;color:var(--teal);margin-top:2px;}
+.ps.w{color:var(--amb);}
+.bdgs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px;}
+.b{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;white-space:nowrap;}
+.bg{background:var(--grnb);color:var(--grn);border:1px solid rgba(63,185,80,0.25);}
+.ba{background:var(--ambb);color:var(--amb);border:1px solid var(--ambbr);}
+.bb{background:var(--blub);color:var(--blu);border:1px solid rgba(88,166,255,0.25);}
+.br{background:var(--redb);color:var(--red);border:1px solid var(--redbr);}
+.bgr{background:rgba(255,255,255,0.05);color:var(--tx2);border:1px solid var(--brd2);}
+.chv{font-size:13px;color:var(--tx3);transition:transform .25s;display:block;text-align:right;margin-top:2px;}
+.chv.o{transform:rotate(180deg);}
+.cb{display:none;border-top:1px solid var(--brd);padding:14px;}
+.cb.o{display:block;}
+.pbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.pb{background:var(--bg3);border-radius:8px;padding:10px 10px 8px;}
+.pbl{font-size:9px;color:var(--tx3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;}
+.pbv{font-size:12px;font-weight:700;color:var(--tx);margin-bottom:6px;}
+.pbv.g{color:var(--teal);}
+.pbv.a{color:var(--amb);}
+.trk{height:3px;border-radius:2px;background:var(--brd2);overflow:hidden;}
+.fil{height:100%;border-radius:2px;}
+.sb2{border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;background:var(--tealb);border:1px solid var(--tealbr);color:var(--teal);}
+.sb2.w{background:var(--ambb);border-color:var(--ambbr);color:var(--amb);}
+.sb2 strong{font-weight:700;}
+.dg{display:flex;flex-direction:column;gap:10px;}
+.db{background:var(--bg3);border-radius:8px;padding:12px;}
+.db h4{font-size:10px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.db p{font-size:13px;color:var(--tx2);line-height:1.6;}
+.cl{list-style:none;}
+.cl li{font-size:13px;color:var(--tx2);padding:9px 0 9px 20px;position:relative;line-height:1.4;border-bottom:1px solid var(--brd);cursor:pointer;-webkit-user-select:none;user-select:none;touch-action:manipulation;}
+.cl li:last-child{border-bottom:none;}
+.cl li:before{content:"";position:absolute;left:0;top:14px;width:9px;height:9px;border-radius:50%;border:2px solid var(--teal);}
+.cl li.done{color:var(--tx3);text-decoration:line-through;}
+.cl li.done:before{background:var(--grn);border-color:var(--grn);}
+.foot{padding:16px 16px 8px;font-size:11px;color:var(--tx3);line-height:1.7;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="htop">
+    <div style="display:flex;align-items:center;">
+      <span class="logo">ENERGYO</span>
+      <span class="htitle">&nbsp;Bietfahrplan</span>
+    </div>
+    <span class="budg">Budget 20k&thinsp;&euro;</span>
+  </div>
+  <div class="hmeta">KFZ-Versteigerung NRW &middot; 06.05.2026 &middot; 9:30 Uhr &middot; Tippe auf Los f&uuml;r Details</div>
+  <div class="filters">
+    <button class="fb on" onclick="doFilter('all',this)">Alle</button>
+    <button class="fb" onclick="doFilter('1',this)">Priorit&auml;t 1</button>
+    <button class="fb" onclick="doFilter('2',this)">Priorit&auml;t 2</button>
+    <button class="fb" onclick="doFilter('3',this)">Priorit&auml;t 3</button>
+    <button class="fb" onclick="doFilter('x',this)">Risiko</button>
+  </div>
+</div>
+
+<div class="sbar" id="sb"></div>
+
+<div class="leg">
+  <span class="li"><span class="ld" style="background:#4db8a0"></span>Prio 1 &mdash; Top</span>
+  <span class="li"><span class="ld" style="background:#f0a500"></span>Prio 2 &mdash; Backup</span>
+  <span class="li"><span class="ld" style="background:#58a6ff"></span>Prio 3 &mdash; Opportun.</span>
+  <span class="li"><span class="ld" style="background:#f85149"></span>Risiko</span>
+</div>
+
+<div class="cards" id="cards"></div>
+<p class="foot">Marktpreise: mobile.de / AutoScout24 Richtwerte &middot; Alle Angaben ohne Gew&auml;hr &middot; Objektbeschreibungen vor Ort ma&szlig;geblich</p>
+
+<script>
+var D=[
+  {nr:39,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 22.165 km',mi:10000,ma:17500,mk:22500,t:['bg|Top-Pick #1','bg|Fahrbereit'],w:'J&uuml;ngster Focus mit wenigstem km-Stand. Bei Max.-Gebot 5.000&thinsp;&euro; unter H&auml;ndlerpreis &mdash; bester Deal der Liste.',c:['Kratzer vs. tiefe Dellen? (500&ndash;1.500&thinsp;&euro; Unterschied)','Reifen: DOT-Nr. und Standplatten?','&Ouml;lmessstab: dunkel OK, nicht z&auml;hfl&uuml;ssig','HU f&auml;llig &rarr; ca. 150&ndash;250&thinsp;&euro; einplanen','Innenraum: Abnutzung Sitz und Lenkrad?']},
+  {nr:82,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 25.218 km',mi:10000,ma:17200,mk:22000,t:['bg|Top-Pick #2','bg|Fahrbereit'],w:'Nahezu identisch mit Nr.&thinsp;39. Bester Fallback wenn Nr.&thinsp;39 zu teuer.',c:['Gleiche Pr&uuml;froutine wie Nr.&thinsp;39','Bordcomputer: Fehlermeldungen?','Reifenprofil und DOT-Alter']},
+  {nr:25,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 29.127 km',mi:10000,ma:17000,mk:21500,t:['bg|HU bis Sep.26 g&uuml;ltig','bg|Fahrbereit'],w:'HU bis Sep.2026 noch g&uuml;ltig &mdash; kein Sofortaufwand. Gleicher Top-Jahrgang wie Nr.&thinsp;39.',c:['HU bis Sep.26 = kein Extraaufwand','Karosserie und Innenraum wie Nr.&thinsp;39','Reifen: Profil und Alter pr&uuml;fen']},
+  {nr:42,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Apr.2023 &middot; 26.488 km',mi:10000,ma:17000,mk:21500,t:['bg|Top-Pick','bg|Fahrbereit'],w:'Gleicher 2023er Jahrgang. Solider Backup-Kandidat in der Gruppe.',c:['Karosserie: tiefe Sch&auml;den oder nur Schrammen?','Innenraum auf Abnutzung pr&uuml;fen','&Ouml;lstand und K&uuml;hlwasser kontrollieren']},
+  {nr:85,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 37.882 km',mi:10000,ma:16500,mk:20500,t:['bg|HU bis Sep.26 g&uuml;ltig','bg|Fahrbereit'],w:'Etwas mehr km, HU bis Sep.26 g&uuml;ltig. Sp&auml;ter Fallback &mdash; Bietinteresse l&auml;sst gegen Ende nach.',c:['HU bis Sep.26 = kein Sofortaufwand','Karosserie- und Innenraumcheck','Reifen und Bremsen optisch pr&uuml;fen']},
+  {nr:62,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 30.241 km',mi:9000,ma:16500,mk:20000,t:['bg|G&uuml;nstigstes Mindestgebot','bg|Fahrbereit'],w:'Niedrigstes Mindestgebot aller 2023er Focus &mdash; maximaler Bietspielraum.',c:['Einstieg 9.000&thinsp;&euro; = meiste Luft nach oben','Gleiche Pr&uuml;froutine wie andere Focus-Kandidaten']},
+  {nr:88,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 31.502 km',mi:10000,ma:16500,mk:20000,t:['bg|Patience-Strategie','bg|Fahrbereit'],w:'Letzter 2023er in der Reihe. Weniger Bieter gegen Ende &mdash; abwarten lohnt sich.',c:['Warten bis fr&uuml;here Lose versteigert sind','Gleiche Pr&uuml;froutine wie alle Focus-Kandidaten','Auf nachlassendes Bietinteresse setzen']},
+  {nr:38,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Nov.2020 &middot; 51.329 km',mi:6600,ma:14000,mk:19000,t:['ba|Backup #1','bg|Fahrbereit'],w:'Neuester Ioniq. Niedriger Unterhalt dank Hybrid. Bei Max.-Gebot 5.000&thinsp;&euro; unter Markt.',c:['Hybridsystem: Fehlermeldungen bei Start?','Standplatten: Reifen auf Eindr&uuml;cke','Akkuanzeige: Kapazit&auml;tsverlust?','Bremsen: Standrost oder eingelaufen?']},
+  {nr:37,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Feb.2020 &middot; 54.558 km',mi:6600,ma:13500,mk:18000,t:['ba|Backup #2','bg|Fahrbereit'],w:'Gleiche Hybridvorteile wie Nr.&thinsp;38. Bremsen bei Hybriden oft top (regeneratives Bremsen).',c:['Gleiche Hybridcheck-Routine wie Nr.&thinsp;38','Reifenprofil und DOT-Datum','Innenraumzustand']},
+  {nr:28,p:'2',pc:'p2',n:'Hyundai Tucson Premium 4WD',s:'Benzin &middot; Automatik &middot; Jul.2018 &middot; 20.343 km',mi:11100,ma:18500,mk:23000,t:['ba|Backup','br|Keine Papiere','bgr|Eingezogen'],w:'Extrem niedrige km f&uuml;r 2018er Premium-SUV. ABER: Zulassungsschein Teil I fehlt &rarr; 2&ndash;6 Wochen B&uuml;rokratie plus 200&ndash;500&thinsp;&euro; extra.',c:['Starke Gebrauchsspuren &mdash; Tiefe der Sch&auml;den pr&uuml;fen','Innenraum auf Schimmel und Moder (Standzeit)','Versteigerungsprotokoll = Eigentumsnachweis sichern','&sect;21 StVZO Abnahme bei T&Uuml;V/DEKRA erforderlich','200&ndash;500&thinsp;&euro; f&uuml;r Papiere einplanen']},
+  {nr:65,p:'2',pc:'p2',n:'VW Tiguan',s:'Benzin &middot; Automatik &middot; Okt.2019 &middot; 112.796 km',mi:9900,ma:15500,mk:19500,t:['ba|Backup','br|Kein Schl&uuml;ssel','bgr|Belgisch'],w:'Wertstabilstes SUV der Liste. Kein Schl&uuml;ssel, Batterie defekt. Belgisches Fahrzeug &rarr; Ummeldung auf NRW erforderlich.',c:['KEIN Schl&uuml;ssel: Nachmachen ca. 200&ndash;400&thinsp;&euro;','Batterie defekt: Starthilfe mitbringen','Bremsen bei 112k km auf Einlaufriefen','Boden: &Ouml;lleckagen?','Belgische Zulassung &rarr; Ummeldung NRW']},
+  {nr:67,p:'3',pc:'p3',n:'MB E220d Kombi',s:'Diesel &middot; Automatik &middot; Apr.2017 &middot; 235.836 km',mi:9100,ma:14500,mk:18500,t:['bb|Opportunistisch','br|Keine Papiere','br|Fahrbereit unklar'],w:'OM 654 Motor langlebig. Potential vorhanden ABER 235k km, keine Papiere und Fahrbereitschaft laut Liste unklar.',c:['Fahrbereitschaft vor Ort kl&auml;ren!','&Ouml;ldeckel innen: Schlamm = Zylinderkopfschaden','Boden: &Ouml;l- und K&uuml;hlwasserleckage?','Felgen besch&auml;digt: Ersatz einkalkulieren','Papieraufwand: 200&ndash;500&thinsp;&euro;']},
+  {nr:80,p:'x',pc:'px',n:'Ford Focus Turnier RISIKO',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 39.077 km',mi:9000,ma:13000,mk:20000,t:['br|K&uuml;hlwasserverlust!','br|Nur mit Mechaniker'],w:'2023er Jahrgang eigentlich top &mdash; ABER K&uuml;hlwasserverlust deutet auf Zylinderkopfdichtung. Harter Deckel: 13.000&thinsp;&euro;.',c:['KRITISCH: K&uuml;hlwasserstand vor Ort pr&uuml;fen','&Ouml;ldeckel auf Schaum = ZKD defekt, Finger weg!','Wei&szlig;er Rauch bei Warmstart = Ausschluss','Nur bieten wenn KEINER dieser Punkte zutrifft']},
+];
+
+function fe(n){return n.toLocaleString('de-DE')+'\u202f\u20ac';}
+function pc(v,m){return Math.min(100,Math.round(v/m*100));}
+var af='all';
+
+function bld(d){
+  var sp=d.mk-d.ma,spP=Math.round(sp/d.mk*100),w=spP<20;
+  var tg=d.t.map(function(t){var a=t.split('|');return'<span class="b '+a[0]+'">'+a[1]+'</span>';}).join('');
+  var ck=d.c.map(function(c){return'<li onclick="this.classList.toggle(\'done\')">'+c+'</li>';}).join('');
+  return'<div class="card '+d.pc+'">'
+    +'<div class="ch" onclick="tog(this)">'
+      +'<div class="r1">'
+        +'<div>'
+          +'<div class="lotnr">Los Nr.\u2009'+d.nr+'</div>'
+          +'<div class="cn">'+d.n+'</div>'
+          +'<div class="cs">'+d.s+'</div>'
+        +'</div>'
+        +'<div class="pr">'
+          +'<div class="pl">Max.-Gebot</div>'
+          +'<div class="pm">'+fe(d.ma)+'</div>'
+          +'<div class="ps'+(w?' w':'')+'">'+fe(sp)+' unter Markt</div>'
+        +'</div>'
+      +'</div>'
+      +'<div class="bdgs">'+tg+'</div>'
+      +'<span class="chv">&#9660;</span>'
+    +'</div>'
+    +'<div class="cb">'
+      +'<div class="pbs">'
+        +'<div class="pb"><div class="pbl">Mindestgebot</div><div class="pbv">'+fe(d.mi)+'</div><div class="trk"><div class="fil" style="width:'+pc(d.mi,d.mk)+'%;background:#58a6ff"></div></div></div>'
+        +'<div class="pb"><div class="pbl">Max.-Gebot</div><div class="pbv a">'+fe(d.ma)+'</div><div class="trk"><div class="fil" style="width:'+pc(d.ma,d.mk)+'%;background:#f0a500"></div></div></div>'
+        +'<div class="pb"><div class="pbl">Marktpreis</div><div class="pbv g">'+fe(d.mk)+'</div><div class="trk"><div class="fil" style="width:100%;background:#4db8a0"></div></div></div>'
+      +'</div>'
+      +'<div class="sb2'+(w?' w':'')+'">Bei Max.-Gebot <strong>'+spP+'% unter H&auml;ndlerpreis</strong> &mdash; Ersparnis <strong>'+fe(sp)+'</strong></div>'
+      +'<div class="dg">'
+        +'<div class="db"><h4>Warum bieten?</h4><p>'+d.w+'</p></div>'
+        +'<div class="db"><h4>Inspektion &mdash; antippen zum Abhaken</h4><ul class="cl">'+ck+'</ul></div>'
+      +'</div>'
+    +'</div>'
+  +'</div>';
+}
+
+function tog(head){
+  var cb=head.nextElementSibling;
+  var chv=head.querySelector('.chv');
+  cb.classList.toggle('o');
+  chv.classList.toggle('o');
+}
+
+function doFilter(val,btn){
+  af=val;
+  var all=document.querySelectorAll('.fb');
+  for(var i=0;i<all.length;i++) all[i].classList.remove('on');
+  btn.classList.add('on');
+  render();
+}
+
+function render(){
+  var list=af==='all'?D:D.filter(function(d){return d.p===af;});
+  var h='';
+  for(var i=0;i<list.length;i++) h+=bld(list[i]);
+  document.getElementById('cards').innerHTML=h;
+  var mas=list.map(function(d){return d.ma;});
+  var sav=list.map(function(d){return d.mk-d.ma;});
+  var avg=Math.round(sav.reduce(function(a,b){return a+b;},0)/sav.length);
+  document.getElementById('sb').innerHTML=
+    '<div class="sc"><div class="sv">'+list.length+'</div><div class="sl">Kandidaten</div></div>'
+   +'<div class="sc"><div class="sv">'+fe(Math.min.apply(null,mas))+'</div><div class="sl">Niedrig. Max.</div></div>'
+   +'<div class="sc"><div class="sv">'+fe(Math.max.apply(null,mas))+'</div><div class="sl">H&ouml;chst. Max.</div></div>'
+   +'<div class="sc"><div class="sv" style="color:#4db8a0">'+fe(avg)+'</div><div class="sl">&Oslash; Ersparnis</div></div>';
+}
+
+document.addEventListener('DOMContentLoaded',function(){render();});
+</script>
+</body>
+</html>
