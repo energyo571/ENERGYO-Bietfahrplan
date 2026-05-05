@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="theme-color" content="#0d1117">
 <title>Versteigerung NRW · 06.05.2026</title>
 <style>
-:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--brd:rgba(255,255,255,0.08);--brd2:rgba(255,255,255,0.14);--tx:#e6edf3;--tx2:#8b949e;--tx3:#6e7681;--teal:#4db8a0;--tealb:rgba(77,184,160,0.12);--tealbr:rgba(77,184,160,0.3);--amb:#f0a500;--ambb:rgba(240,165,0,0.12);--ambbr:rgba(240,165,0,0.3);--blu:#58a6ff;--blub:rgba(88,166,255,0.1);--red:#f85149;--redb:rgba(248,81,73,0.1);--redbr:rgba(248,81,73,0.3);--grn:#3fb950;--grnb:rgba(63,185,80,0.1);}
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--brd:rgba(255,255,255,0.08);--brd2:rgba(255,255,255,0.14);--tx:#e6edf3;--tx2:#8b949e;--tx3:#6e7681;--teal:#4db8a0;--tealb:rgba(77,184,160,0.12);--tealbr:rgba(77,184,160,0.3);--amb:#f0a500;--ambb:rgba(240,165,0,0.12);--ambbr:rgba(240,165,0,0.3);--blu:#58a6ff;--blub:rgba(88,166,255,0.1);--red:#f85149;--redb:rgba(248,81,73,0.1);--redbr:rgba(248,81,73,0.3);--grn:#3fb950;--grnb:rgba(63,185,80,0.1);--pur:#a371f7;--purb:rgba(163,113,247,0.1);--purbr:rgba(163,113,247,0.3);}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;overscroll-behavior:none;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;background:var(--bg);color:var(--tx);padding-bottom:env(safe-area-inset-bottom,20px);}
@@ -20,13 +19,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;ba
 .hmeta{font-size:11px;color:var(--tx3);margin-bottom:10px;line-height:1.5;}
 .filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
 .filters::-webkit-scrollbar{display:none;}
-.fb{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;font-size:13px;font-weight:600;padding:7px 16px;border-radius:20px;border:1px solid var(--brd2);background:transparent;color:var(--tx2);cursor:pointer;white-space:nowrap;-webkit-appearance:none;touch-action:manipulation;}
+.fb{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;font-size:12px;font-weight:600;padding:7px 14px;border-radius:20px;border:1px solid var(--brd2);background:transparent;color:var(--tx2);cursor:pointer;white-space:nowrap;-webkit-appearance:none;touch-action:manipulation;}
 .fb.on{background:var(--teal);color:#0d1117;border-color:var(--teal);}
 .sbar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--brd);border-bottom:1px solid var(--brd);}
 .sc{background:var(--bg);padding:10px 6px;text-align:center;}
 .sv{font-size:13px;font-weight:700;color:var(--tx);line-height:1;margin-bottom:3px;}
 .sl{font-size:9px;color:var(--tx3);line-height:1.3;}
-.leg{display:flex;gap:14px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--brd);}
+.leg{display:flex;gap:12px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--brd);}
 .leg::-webkit-scrollbar{display:none;}
 .li{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx3);white-space:nowrap;}
 .ld{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
@@ -53,6 +52,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;ba
 .bb{background:var(--blub);color:var(--blu);border:1px solid rgba(88,166,255,0.25);}
 .br{background:var(--redb);color:var(--red);border:1px solid var(--redbr);}
 .bgr{background:rgba(255,255,255,0.05);color:var(--tx2);border:1px solid var(--brd2);}
+.bp{background:var(--purb);color:var(--pur);border:1px solid var(--purbr);}
 .chv{font-size:13px;color:var(--tx3);transition:transform .25s;display:block;text-align:right;margin-top:2px;}
 .chv.o{transform:rotate(180deg);}
 .cb{display:none;border-top:1px solid var(--brd);padding:14px;}
@@ -78,11 +78,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;ba
 .cl li:before{content:"";position:absolute;left:0;top:14px;width:9px;height:9px;border-radius:50%;border:2px solid var(--teal);}
 .cl li.done{color:var(--tx3);text-decoration:line-through;}
 .cl li.done:before{background:var(--grn);border-color:var(--grn);}
+.args{list-style:none;}
+.args li{font-size:13px;color:var(--tx2);padding:9px 0 9px 16px;position:relative;line-height:1.4;border-bottom:1px solid var(--brd);}
+.args li:last-child{border-bottom:none;}
+.args li:before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--pur);opacity:.8;}
+.verh-box{background:var(--purb);border:1px solid var(--purbr);border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:12px;color:var(--pur);line-height:1.5;}
+.verh-box strong{font-weight:700;display:block;margin-bottom:3px;}
+.section-hdr{padding:6px 16px 4px;font-size:10px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;}
+.tip-card{background:var(--bg2);border:1px solid var(--purbr);border-radius:14px;border-left:3px solid var(--pur);margin:0 16px 10px;padding:14px;}
+.tip-card h3{font-size:13px;font-weight:700;color:var(--pur);margin-bottom:10px;}
+.tip-list{list-style:none;}
+.tip-list li{font-size:13px;color:var(--tx2);padding:8px 0 8px 20px;position:relative;line-height:1.5;border-bottom:1px solid var(--brd);}
+.tip-list li:last-child{border-bottom:none;}
+.tip-list li:before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:50%;background:var(--pur);opacity:.6;}
+.tip-list li strong{color:var(--tx);font-weight:600;}
 .foot{padding:16px 16px 8px;font-size:11px;color:var(--tx3);line-height:1.7;text-align:center;}
 </style>
 </head>
 <body>
-
 <div class="hdr">
   <div class="htop">
     <div style="display:flex;align-items:center;">
@@ -94,80 +107,109 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;ba
   <div class="hmeta">KFZ-Versteigerung NRW &middot; 06.05.2026 &middot; 9:30 Uhr &middot; Tippe auf Los f&uuml;r Details</div>
   <div class="filters">
     <button class="fb on" onclick="doFilter('all',this)">Alle</button>
-    <button class="fb" onclick="doFilter('1',this)">Priorit&auml;t 1</button>
-    <button class="fb" onclick="doFilter('2',this)">Priorit&auml;t 2</button>
-    <button class="fb" onclick="doFilter('3',this)">Priorit&auml;t 3</button>
+    <button class="fb" onclick="doFilter('1',this)">Prio 1</button>
+    <button class="fb" onclick="doFilter('2',this)">Prio 2</button>
+    <button class="fb" onclick="doFilter('3',this)">Prio 3</button>
     <button class="fb" onclick="doFilter('x',this)">Risiko</button>
+    <button class="fb" onclick="doFilter('t',this)">Verhandlung</button>
   </div>
 </div>
-
 <div class="sbar" id="sb"></div>
-
 <div class="leg">
-  <span class="li"><span class="ld" style="background:#4db8a0"></span>Prio 1 &mdash; Top</span>
-  <span class="li"><span class="ld" style="background:#f0a500"></span>Prio 2 &mdash; Backup</span>
-  <span class="li"><span class="ld" style="background:#58a6ff"></span>Prio 3 &mdash; Opportun.</span>
+  <span class="li"><span class="ld" style="background:#4db8a0"></span>Prio 1</span>
+  <span class="li"><span class="ld" style="background:#f0a500"></span>Prio 2</span>
+  <span class="li"><span class="ld" style="background:#58a6ff"></span>Prio 3</span>
   <span class="li"><span class="ld" style="background:#f85149"></span>Risiko</span>
+  <span class="li"><span class="ld" style="background:#a371f7"></span>Verhandlung</span>
 </div>
-
-<div class="cards" id="cards"></div>
+<div id="main"></div>
 <p class="foot">Marktpreise: mobile.de / AutoScout24 Richtwerte &middot; Alle Angaben ohne Gew&auml;hr &middot; Objektbeschreibungen vor Ort ma&szlig;geblich</p>
 
 <script>
 var D=[
-  {nr:39,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 22.165 km',mi:10000,ma:17500,mk:22500,t:['bg|Top-Pick #1','bg|Fahrbereit'],w:'J&uuml;ngster Focus mit wenigstem km-Stand. Bei Max.-Gebot 5.000&thinsp;&euro; unter H&auml;ndlerpreis &mdash; bester Deal der Liste.',c:['Kratzer vs. tiefe Dellen? (500&ndash;1.500&thinsp;&euro; Unterschied)','Reifen: DOT-Nr. und Standplatten?','&Ouml;lmessstab: dunkel OK, nicht z&auml;hfl&uuml;ssig','HU f&auml;llig &rarr; ca. 150&ndash;250&thinsp;&euro; einplanen','Innenraum: Abnutzung Sitz und Lenkrad?']},
-  {nr:82,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 25.218 km',mi:10000,ma:17200,mk:22000,t:['bg|Top-Pick #2','bg|Fahrbereit'],w:'Nahezu identisch mit Nr.&thinsp;39. Bester Fallback wenn Nr.&thinsp;39 zu teuer.',c:['Gleiche Pr&uuml;froutine wie Nr.&thinsp;39','Bordcomputer: Fehlermeldungen?','Reifenprofil und DOT-Alter']},
-  {nr:25,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 29.127 km',mi:10000,ma:17000,mk:21500,t:['bg|HU bis Sep.26 g&uuml;ltig','bg|Fahrbereit'],w:'HU bis Sep.2026 noch g&uuml;ltig &mdash; kein Sofortaufwand. Gleicher Top-Jahrgang wie Nr.&thinsp;39.',c:['HU bis Sep.26 = kein Extraaufwand','Karosserie und Innenraum wie Nr.&thinsp;39','Reifen: Profil und Alter pr&uuml;fen']},
-  {nr:42,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Apr.2023 &middot; 26.488 km',mi:10000,ma:17000,mk:21500,t:['bg|Top-Pick','bg|Fahrbereit'],w:'Gleicher 2023er Jahrgang. Solider Backup-Kandidat in der Gruppe.',c:['Karosserie: tiefe Sch&auml;den oder nur Schrammen?','Innenraum auf Abnutzung pr&uuml;fen','&Ouml;lstand und K&uuml;hlwasser kontrollieren']},
-  {nr:85,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 37.882 km',mi:10000,ma:16500,mk:20500,t:['bg|HU bis Sep.26 g&uuml;ltig','bg|Fahrbereit'],w:'Etwas mehr km, HU bis Sep.26 g&uuml;ltig. Sp&auml;ter Fallback &mdash; Bietinteresse l&auml;sst gegen Ende nach.',c:['HU bis Sep.26 = kein Sofortaufwand','Karosserie- und Innenraumcheck','Reifen und Bremsen optisch pr&uuml;fen']},
-  {nr:62,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 30.241 km',mi:9000,ma:16500,mk:20000,t:['bg|G&uuml;nstigstes Mindestgebot','bg|Fahrbereit'],w:'Niedrigstes Mindestgebot aller 2023er Focus &mdash; maximaler Bietspielraum.',c:['Einstieg 9.000&thinsp;&euro; = meiste Luft nach oben','Gleiche Pr&uuml;froutine wie andere Focus-Kandidaten']},
-  {nr:88,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 31.502 km',mi:10000,ma:16500,mk:20000,t:['bg|Patience-Strategie','bg|Fahrbereit'],w:'Letzter 2023er in der Reihe. Weniger Bieter gegen Ende &mdash; abwarten lohnt sich.',c:['Warten bis fr&uuml;here Lose versteigert sind','Gleiche Pr&uuml;froutine wie alle Focus-Kandidaten','Auf nachlassendes Bietinteresse setzen']},
-  {nr:38,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Nov.2020 &middot; 51.329 km',mi:6600,ma:14000,mk:19000,t:['ba|Backup #1','bg|Fahrbereit'],w:'Neuester Ioniq. Niedriger Unterhalt dank Hybrid. Bei Max.-Gebot 5.000&thinsp;&euro; unter Markt.',c:['Hybridsystem: Fehlermeldungen bei Start?','Standplatten: Reifen auf Eindr&uuml;cke','Akkuanzeige: Kapazit&auml;tsverlust?','Bremsen: Standrost oder eingelaufen?']},
-  {nr:37,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Feb.2020 &middot; 54.558 km',mi:6600,ma:13500,mk:18000,t:['ba|Backup #2','bg|Fahrbereit'],w:'Gleiche Hybridvorteile wie Nr.&thinsp;38. Bremsen bei Hybriden oft top (regeneratives Bremsen).',c:['Gleiche Hybridcheck-Routine wie Nr.&thinsp;38','Reifenprofil und DOT-Datum','Innenraumzustand']},
-  {nr:28,p:'2',pc:'p2',n:'Hyundai Tucson Premium 4WD',s:'Benzin &middot; Automatik &middot; Jul.2018 &middot; 20.343 km',mi:11100,ma:18500,mk:23000,t:['ba|Backup','br|Keine Papiere','bgr|Eingezogen'],w:'Extrem niedrige km f&uuml;r 2018er Premium-SUV. ABER: Zulassungsschein Teil I fehlt &rarr; 2&ndash;6 Wochen B&uuml;rokratie plus 200&ndash;500&thinsp;&euro; extra.',c:['Starke Gebrauchsspuren &mdash; Tiefe der Sch&auml;den pr&uuml;fen','Innenraum auf Schimmel und Moder (Standzeit)','Versteigerungsprotokoll = Eigentumsnachweis sichern','&sect;21 StVZO Abnahme bei T&Uuml;V/DEKRA erforderlich','200&ndash;500&thinsp;&euro; f&uuml;r Papiere einplanen']},
-  {nr:65,p:'2',pc:'p2',n:'VW Tiguan',s:'Benzin &middot; Automatik &middot; Okt.2019 &middot; 112.796 km',mi:9900,ma:15500,mk:19500,t:['ba|Backup','br|Kein Schl&uuml;ssel','bgr|Belgisch'],w:'Wertstabilstes SUV der Liste. Kein Schl&uuml;ssel, Batterie defekt. Belgisches Fahrzeug &rarr; Ummeldung auf NRW erforderlich.',c:['KEIN Schl&uuml;ssel: Nachmachen ca. 200&ndash;400&thinsp;&euro;','Batterie defekt: Starthilfe mitbringen','Bremsen bei 112k km auf Einlaufriefen','Boden: &Ouml;lleckagen?','Belgische Zulassung &rarr; Ummeldung NRW']},
-  {nr:67,p:'3',pc:'p3',n:'MB E220d Kombi',s:'Diesel &middot; Automatik &middot; Apr.2017 &middot; 235.836 km',mi:9100,ma:14500,mk:18500,t:['bb|Opportunistisch','br|Keine Papiere','br|Fahrbereit unklar'],w:'OM 654 Motor langlebig. Potential vorhanden ABER 235k km, keine Papiere und Fahrbereitschaft laut Liste unklar.',c:['Fahrbereitschaft vor Ort kl&auml;ren!','&Ouml;ldeckel innen: Schlamm = Zylinderkopfschaden','Boden: &Ouml;l- und K&uuml;hlwasserleckage?','Felgen besch&auml;digt: Ersatz einkalkulieren','Papieraufwand: 200&ndash;500&thinsp;&euro;']},
-  {nr:80,p:'x',pc:'px',n:'Ford Focus Turnier RISIKO',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 39.077 km',mi:9000,ma:13000,mk:20000,t:['br|K&uuml;hlwasserverlust!','br|Nur mit Mechaniker'],w:'2023er Jahrgang eigentlich top &mdash; ABER K&uuml;hlwasserverlust deutet auf Zylinderkopfdichtung. Harter Deckel: 13.000&thinsp;&euro;.',c:['KRITISCH: K&uuml;hlwasserstand vor Ort pr&uuml;fen','&Ouml;ldeckel auf Schaum = ZKD defekt, Finger weg!','Wei&szlig;er Rauch bei Warmstart = Ausschluss','Nur bieten wenn KEINER dieser Punkte zutrifft']},
+  {nr:39,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 22.165 km',mi:10000,ma:17500,mk:22500,t:['bg|Top-Pick #1','bg|Fahrbereit'],w:'Juengster Focus mit wenigstem km. Bei Max.-Gebot 5.000 unter Haendlerpreis - bester Deal der Liste.',c:['Kratzer vs. tiefe Dellen? (500-1.500 Unterschied)','Reifen: DOT-Nr. und Standplatten?','Oelmessstab: dunkel OK, nicht zaehfluessig','HU faellig: ca. 150-250 einplanen','Innenraum: Abnutzung Sitz und Lenkrad?'],v:['HU ist faellig: 150-250 als Abzug nennen','Karosserieschaeden konkret benennen und Kostenvoranschlag erwaehnen','Kein Gewaehrleistungsanspruch = Risikoaufschlag begruenden','Vergleich: gleicher Focus beim Haendler 22.500+']},
+  {nr:82,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 25.218 km',mi:10000,ma:17200,mk:22000,t:['bg|Top-Pick #2','bg|Fahrbereit'],w:'Nahezu identisch mit Nr. 39. Bester Fallback wenn Nr. 39 zu teuer.',c:['Gleiche Prufroutine wie Nr. 39','Bordcomputer: Fehlermeldungen?','Reifenprofil und DOT-Alter'],v:['Gleiche Argumente wie Nr. 39','Auf etwas mehr km hinweisen vs. Nr. 39','HU faellig als konkreten Abzug nennen']},
+  {nr:25,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 29.127 km',mi:10000,ma:17000,mk:21500,t:['bg|HU bis Sep.26','bg|Fahrbereit'],w:'HU bis Sep.2026 noch gueltig - kein Sofortaufwand. Gleicher Top-Jahrgang.',c:['HU bis Sep.26 = kein Extraaufwand','Karosserie und Innenraum wie Nr. 39','Reifen: Profil und Alter pruefen'],v:['Karosserieschaeden dokumentieren und Abzug begruenden','Keine Garantie = 10-15% Risikoabschlag argumentieren','Marktpreis 21.500 als Anker nennen']},
+  {nr:42,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Apr.2023 &middot; 26.488 km',mi:10000,ma:17000,mk:21500,t:['bg|Top-Pick','bg|Fahrbereit'],w:'Gleicher 2023er Jahrgang. Solider Backup-Kandidat.',c:['Karosserie: tiefe Schaeden oder nur Schrammen?','Innenraum auf Abnutzung pruefen','Oelstand und Kuehlwasser kontrollieren'],v:['Schadensumfang konkret benennen','HU faellig als Sofortkosten einrechnen','Kein Rueckgaberecht im Gegensatz zum Haendler']},
+  {nr:15,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 36.685 km',mi:8000,ma:16000,mk:20500,t:['bg|Guenstiger Einstieg','bg|Fahrbereit'],w:'Gleicher 2023er Jahrgang wie Top-Gruppe aber 2.000 guenstigeres Mindestgebot. Oft uebersehen.',c:['Gleiche Prufroutine wie andere Focus-Kandidaten','HU faellig einplanen','Innenraum auf Dienstwagennutzung pruefen'],v:['Guenstigstes Mindestgebot der 2023er Gruppe','HU faellig als Verhandlungsargument','Karosserieschaeden konkret benennen']},
+  {nr:61,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jun.2022 &middot; 43.336 km',mi:8000,ma:15500,mk:19000,t:['bg|Guenstiger Einstieg','bg|Fahrbereit'],w:'Ein Jahr aelter als die 2023er Gruppe aber deutlich guenstigeres Mindestgebot. Fahrbereit.',c:['Karosserie- und Innenraumcheck','HU faellig einplanen','Reifen: Profil und DOT pruefen'],v:['Jahrgang 2022 vs. 2023: ca. 1.500 Wertunterschied nennen','HU faellig: 200 Abzug','Schaeden dokumentieren und Abzug nennen']},
+  {nr:85,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 37.882 km',mi:10000,ma:16500,mk:20500,t:['bg|HU bis Sep.26','bg|Fahrbereit'],w:'Etwas mehr km, HU bis Sep.26 gueltig. Spaeter Fallback - Bietinteresse laesst gegen Ende nach.',c:['HU bis Sep.26 = kein Sofortaufwand','Karosserie- und Innenraumcheck','Reifen und Bremsen optisch pruefen'],v:['Mehr km als fruehe Kandidaten = Abzug begruenden','Karosserieschaeden konkret anfuehren','Patience: spaet in der Auktion = weniger Konkurrenz']},
+  {nr:62,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 30.241 km',mi:9000,ma:16500,mk:20000,t:['bg|Guenstigstes Mindestgebot','bg|Fahrbereit'],w:'Niedrigstes Mindestgebot aller 2023er Focus - maximaler Bietspielraum.',c:['Einstieg 9.000 = meiste Luft nach oben','Gleiche Prufroutine wie andere Focus-Kandidaten'],v:['Niedrigstes Mindestgebot = viel Spielraum','HU faellig als Abzug','Marktvergleich: 20.000 beim Haendler nennen']},
+  {nr:88,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Jan.2023 &middot; 31.502 km',mi:10000,ma:16500,mk:20000,t:['bg|Patience-Strategie','bg|Fahrbereit'],w:'Letzter 2023er in der Reihe. Weniger Bieter gegen Ende - abwarten lohnt sich.',c:['Warten bis fruehe Lose versteigert sind','Gleiche Prufroutine wie alle Focus','Auf nachlassendes Bietinteresse setzen'],v:['Letzter der Gruppe = muede Bieter','HU faellig benennen','Schaeden dokumentieren']},
+  {nr:90,p:'1',pc:'p1',n:'Ford Focus Turnier',s:'Diesel &middot; Automatik &middot; Mai 2021 &middot; 46.686 km',mi:8000,ma:14500,mk:17500,t:['bg|Guenstiger Einstieg','bg|Raeder dabei'],w:'Aelterer Jahrgang aber fahrbereit und Raeder im Fahrzeug inklusive. Guenstiger Einstieg.',c:['Jahrgang 2021: mehr km akzeptabel bei niedrigem Preis','Raeder im Fahrzeug: welche Groesse?','Karosserie und Innenraum pruefen','HU faellig einplanen'],v:['Jahrgang 2021 vs. 2023: klar argumentierter Preisunterschied','HU faellig: 200 Abzug','Schaeden benennen']},
+  {nr:16,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Sep.2019 &middot; 51.371 km',mi:6100,ma:12500,mk:17500,t:['ba|Backup','bg|Fahrbereit'],w:'Aeltester der drei Ioniq aber guenstigstes Mindestgebot. Gleiche Hybridvorteile.',c:['Hybridsystem: Fehlermeldungen bei Start?','Standplatten: Reifen auf Eindruecke','Akkuanzeige: Kapazitaetsverlust?','Bremsen: Standrost oder eingelaufen?'],v:['Aeltester Ioniq = Abzug vs. Nr. 37 und 38','Akkudegradation erwaehnen als Ungewissheit','Keine Garantie auf Hybridsystem']},
+  {nr:38,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Nov.2020 &middot; 51.329 km',mi:6600,ma:14000,mk:19000,t:['ba|Backup #1','bg|Fahrbereit'],w:'Neuester Ioniq. Niedriger Unterhalt dank Hybrid. Bei Max.-Gebot 5.000 unter Markt.',c:['Hybridsystem: Fehlermeldungen bei Start?','Standplatten: Reifen auf Eindruecke','Akkuanzeige: Kapazitaetsverlust?','Bremsen: Standrost oder eingelaufen?'],v:['Akkudegradation als Ungewissheit nennen','HU faellig einplanen','Kein Garantieanspruch auf Hybridsystem begruenden']},
+  {nr:37,p:'2',pc:'p2',n:'Hyundai Ioniq Hybrid',s:'Benzin/Hybrid &middot; Automatik &middot; Feb.2020 &middot; 54.558 km',mi:6600,ma:13500,mk:18000,t:['ba|Backup #2','bg|Fahrbereit'],w:'Gleiche Hybridvorteile wie Nr. 38. Bremsen bei Hybriden oft top.',c:['Gleiche Hybridcheck-Routine wie Nr. 38','Reifenprofil und DOT-Datum','Innenraumzustand'],v:['Mehr km als Nr. 38 = Abzug begruenden','Akkuzustand unklar = Risikoargument','HU faellig']},
+  {nr:28,p:'2',pc:'p2',n:'Hyundai Tucson Premium 4WD',s:'Benzin &middot; Automatik &middot; Jul.2018 &middot; 20.343 km',mi:11100,ma:18500,mk:23000,t:['ba|Backup','br|Keine Papiere','bgr|Eingezogen'],w:'Extrem niedrige km fuer 2018er Premium-SUV. Zulassungsschein Teil I fehlt - 2-6 Wochen Buerokratie plus 200-500 extra.',c:['Starke Gebrauchsspuren: Tiefe der Schaeden pruefen','Innenraum auf Schimmel und Moder','Versteigerungsprotokoll = Eigentumsnachweis sichern','Par. 21 StVZO Abnahme bei TUEV/DEKRA noetig','200-500 fuer Papiere einplanen'],v:['Keine Papiere = konkreter Mehraufwand 200-500','Starke Gebrauchsspuren trotz 20k km erklaerunsbeduerftig','TUV-Abnahme als Zusatzkosten nennen','Standzeit unklar = Risikoaufschlag']},
+  {nr:65,p:'2',pc:'p2',n:'VW Tiguan',s:'Benzin &middot; Automatik &middot; Okt.2019 &middot; 112.796 km',mi:9900,ma:15500,mk:19500,t:['ba|Backup','br|Kein Schluessel','bgr|Belgisch'],w:'Wertstabilstes SUV der Liste. Kein Schluessel, Batterie defekt. Belgisches Fahrzeug, Ummeldung noetig.',c:['KEIN Schluessel: Nachmachen ca. 200-400','Batterie defekt: Starthilfe mitbringen','Bremsen bei 112k km auf Riefen pruefen','Boden: Oelleckagen?','Belgische Zulassung: Ummeldung NRW'],v:['Kein Schluessel: 200-400 Mehrkosten nennen','Ummeldung belgisches KFZ: Aufwand und Gebuehren','Batterie defekt: 150-250 Ersatz','112k km: Bremsen und Verschleiss als Argument']},
+  {nr:56,p:'2',pc:'p2',n:'MB Vito 116 Tourer',s:'Diesel &middot; Automatik &middot; Nov.2020 &middot; 79.864 km',mi:12900,ma:18000,mk:24000,t:['ba|Backup','bg|Fahrbereit','bgr|Bueroausbau'],w:'MB Vito mit mobilem Bueroausbau - Schreibtisch, Steckdosen, Ablagen im Innenraum. Fuer Aussendienstler interessant. Marktpreis ca. 24.000.',c:['Bueroausbau: Zustand der Einbauten pruefen','Steckdosen und Wechselrichter funktionsfaehig?','Karosserie und Lackschaeden','HU faellig einplanen','Innenraum: Polster und Abnutzung der Einbauten'],v:['Bueroausbau verringert Kaeuferkreis: Argument fuer Abzug','HU faellig: 200 Sofortkosten','Spezieller Ausbau schwer weiterverkaeuflich','Karosserieschaeden konkret benennen']},
+  {nr:84,p:'2',pc:'p2',n:'MB Vito',s:'Diesel &middot; Automatik &middot; Aug.2012 &middot; 116.771 km',mi:5200,ma:9500,mk:14000,t:['ba|Backup','bg|HU bis Aug.27'],w:'HU noch bis Aug.2027 gueltig - grosser Vorteil. MB Vito mit Automatik sehr gefragt. Guenstiger Einstieg.',c:['HU bis Aug.27 = kein Sofortaufwand','Karosserie und Lackschaeden','116k km: Oelverlust unter dem Auto?','Innenraum und Sitze auf Abnutzung','Getriebe: ruckelt oder schaltet es sauber?'],v:['Jahrgang 2012 = Abzug vom Neuwert','116k km: Verschleiss als Argument','HU laeuft 2027 ab: dann faellig']},
+  {nr:63,p:'3',pc:'p3',n:'MB A250 4Matic',s:'Benzin &middot; Automatik &middot; Allrad &middot; Mrz.2015 &middot; 104.747 km',mi:9900,ma:15000,mk:20000,t:['bb|Opportunistisch','bg|Fahrbereit'],w:'A250 mit Allrad: wertstabil und fahrspassig. Defekte Verkleidungsteile sind Kleinkram.',c:['Verkleidungsteile: wie viele defekt?','Karosserie auf Unfallspuren pruefen','Innenraum: Abnutzung bei 104k km','Reifen auf Alter und Profil','Getriebe: ruckelt beim Anfahren?'],v:['Defekte Verkleidungsteile: 300-600 Ersatzteilkosten nennen','104k km: Verschleissargument','HU faellig','Jahrgang 2015 vs. neuere Modelle']},
+  {nr:67,p:'3',pc:'p3',n:'MB E220d Kombi',s:'Diesel &middot; Automatik &middot; Apr.2017 &middot; 235.836 km',mi:9100,ma:14500,mk:18500,t:['bb|Opportunistisch','br|Keine Papiere','br|Fahrbereit unklar'],w:'OM 654 Motor langlebig. Potential vorhanden ABER 235k km, keine Papiere, Fahrbereitschaft unklar.',c:['Fahrbereitschaft vor Ort klaeren!','Oeldeckel innen: Schlamm = Zylinderkopfschaden','Boden: Oel- und Kuehlwasserleckage?','Felgen beschaedigt: Ersatz einkalkulieren','Papieraufwand: 200-500'],v:['235k km: massiver Abzug begruenden','Keine Papiere: 200-500 Mehrkosten','Fahrbereitschaft unklar: maximales Risiko','Felgenschaeden: Kostenvoranschlag nennen']},
+  {nr:4,p:'3',pc:'p3',n:'Audi A6 Avant',s:'Diesel/Hybrid &middot; Automatik &middot; Nov.2018 &middot; 352.591 km',mi:9900,ma:13000,mk:22000,t:['bb|Opportunistisch','br|MKL an','br|Batterie defekt'],w:'Moderner C8 A6. MKL und 352k km schrecken Bieter ab - deine Chance. Nur bieten wenn MKL-Fehler harmlos ist.',c:['KRITISCH: Was zeigt die MKL? Fehlercode auslesen','Batterie defekt: Starthilfe mitbringen','352k km: Oelverlust unter dem Auto?','Standschaeden: Reifen und Bremsen','Eingezogenes Fahrzeug: Papiere pruefen'],v:['352k km = groesstes Argument fuer Abzug','MKL an: Fehlerdiagnose unbekannt = Risikoaufschlag','Batterie defekt: 150-300 Ersatz','Nur mit Fehlercode bieten']},
+  {nr:74,p:'3',pc:'p3',n:'MB S500',s:'Benzin &middot; Automatik &middot; Apr.2014 &middot; 133.658 km',mi:12300,ma:18500,mk:30000,t:['bb|Opportunistisch','br|Keine Papiere','br|Standschaeden'],w:'V8 S-Klasse fuer 12.300 Mindestgebot. ABER: lange Standzeit, Reifen und Felgen defekt, keine Papiere. Nur fuer Kenner mit Werkstattzugang.',c:['Reifen komplett defekt: 4 neue Reifen 600-1.200','Batterie defekt: Starthilfe mitbringen','Luftfederung: Reparatur sehr teuer','Keine Papiere: 200-500 Aufwand','Elektronik: Fehler im Display bei Start?'],v:['Reifen komplett faellig: 4 Stueck 600-1.200','Keine Papiere: 200-500 Aufwand','Luftfederung Standschaden: potenziell 1.000+','Lange Standzeit = unbekannte Schaeden']},
+  {nr:7,p:'3',pc:'p3',n:'Audi A4 (Ex-Fahrschule)',s:'Benzin/Hybrid &middot; Automatik &middot; Jul.2019 &middot; 230.683 km',mi:7900,ma:11000,mk:16000,t:['bb|Opportunistisch','bgr|Ex-Fahrschule','bg|HU bis Okt.26'],w:'Ex-Fahrschulfahrzeug mit 230k km. Starke Gebrauchsspuren aber HU noch bis Okt.26 gueltig.',c:['HU bis Okt.26 gueltig = Pluspunkt','Doppelpedale: wurden die entfernt?','Starke Gebrauchsspuren: Innenraum genau pruefen','Getriebe auf Verschleiss pruefen','230k km: Oelstand und Motorlauf pruefen'],v:['230k km intensive Fahrschulnutzung: grosser Abzug','Doppelpedale: Umbaukosten wenn noch drin','Starke Gebrauchsspuren dokumentieren','HU laeuft Okt.26 ab: dann faellig']},
+  {nr:80,p:'x',pc:'px',n:'Ford Focus Turnier RISIKO',s:'Diesel &middot; Automatik &middot; Sep.2023 &middot; 39.077 km',mi:9000,ma:13000,mk:20000,t:['br|Kuehlwasserverlust!','br|Nur mit Mechaniker'],w:'2023er Jahrgang eigentlich top - ABER Kuehlwasserverlust deutet auf Zylinderkopfdichtung. Harter Deckel: 13.000.',c:['KRITISCH: Kuehlwasserstand vor Ort pruefen','Oeldeckel auf Schaum = ZKD defekt, Finger weg!','Weisser Rauch bei Warmstart = Ausschluss','Nur bieten wenn KEINER dieser Punkte zutrifft'],v:['Kuehlwasserverlust: ZKD-Reparatur 800-2.000 als Argument','Risiko offen benennen','Nur mit Mechaniker-Bestaetigung bieten']},
+];
+
+var TIPS=[
+  {t:'Maeengelargument',d:'Jeden sichtbaren Schaden konkret benennen und einen realistischen Kostenvoranschlag nennen. Nicht "es hat Schaeden" sondern "die Delle links hinten kostet laut Karosseriebetrieb 400-600 Euro."'},
+  {t:'HU-Argument',d:'Wenn die HU faellig ist: "Die HU kostet mich direkt 150-250 Euro, das muss vom Preis runter." Klingt konkret und ist nicht widerlegbar.'},
+  {t:'Kein Gewaehrleistungsanspruch',d:'Bei jedem Kauf ohne Garantie: "Ich trage das volle Risiko. Kein Haendler wuerde das ohne 10-15% Abschlag verkaufen." Sachlich, nicht aggressiv.'},
+  {t:'Marktpreisvergleich',d:'Marktpreis auf mobile.de zeigen: "Das gleiche Fahrzeug steht beim Haendler fuer X Euro - mit Garantie, mit Rueckgaberecht, mit HU. Dementsprechend kalkuliere ich hier."'},
+  {t:'Konkurrenzlos',d:'Wenn du der einzige Interessent bist: "Ich bin bereit sofort zuzuschlagen, aber nur zum Preis X. Sonst gehe ich zum naechsten Los."'},
+  {t:'Standzeit-Risiko',d:'Bei Fahrzeugen mit langer Standzeit: "Ich weiss nicht wie lang das Fahrzeug stand. Standschaeden an Reifen, Bremsen und Dichtungen sind unkalkulierbar - das ist eingepreist."'},
+  {t:'Keine Papiere',d:'Bei fehlenden Dokumenten: "Ich muss Papiere neu beantragen, TUeV-Abnahme nach Par. 21 StVZO machen und rechne mit 200-500 Euro plus 4-6 Wochen Wartezeit. Das ist mein Abzug."'},
+  {t:'Psychologie: Anker setzen',d:'Immer zuerst einen niedrigeren Preis nennen als du bereit bist zu zahlen. Wer zuerst nennt verliert - aber wer gar nicht nennt verliert mehr. Starte 10-15% unter deinem echten Limit.'},
 ];
 
 function fe(n){return n.toLocaleString('de-DE')+'\u202f\u20ac';}
-function pc(v,m){return Math.min(100,Math.round(v/m*100));}
+function pct(v,m){return Math.min(100,Math.round(v/m*100));}
 var af='all';
 
 function bld(d){
   var sp=d.mk-d.ma,spP=Math.round(sp/d.mk*100),w=spP<20;
   var tg=d.t.map(function(t){var a=t.split('|');return'<span class="b '+a[0]+'">'+a[1]+'</span>';}).join('');
   var ck=d.c.map(function(c){return'<li onclick="this.classList.toggle(\'done\')">'+c+'</li>';}).join('');
+  var vk=d.v?d.v.map(function(v){return'<li>'+v+'</li>';}).join(''):'';
+  var vblock=vk?'<div class="db"><div class="verh-box"><strong>Verhandlung vor Ort</strong>Wenn du nicht Hoechstbietender bist: direkt ansprechen.</div><ul class="args">'+vk+'</ul></div>':'';
   return'<div class="card '+d.pc+'">'
     +'<div class="ch" onclick="tog(this)">'
       +'<div class="r1">'
-        +'<div>'
-          +'<div class="lotnr">Los Nr.\u2009'+d.nr+'</div>'
-          +'<div class="cn">'+d.n+'</div>'
-          +'<div class="cs">'+d.s+'</div>'
-        +'</div>'
-        +'<div class="pr">'
-          +'<div class="pl">Max.-Gebot</div>'
-          +'<div class="pm">'+fe(d.ma)+'</div>'
-          +'<div class="ps'+(w?' w':'')+'">'+fe(sp)+' unter Markt</div>'
-        +'</div>'
+        +'<div><div class="lotnr">Los Nr.\u2009'+d.nr+'</div>'
+        +'<div class="cn">'+d.n+'</div>'
+        +'<div class="cs">'+d.s+'</div></div>'
+        +'<div class="pr"><div class="pl">Max.-Gebot</div>'
+        +'<div class="pm">'+fe(d.ma)+'</div>'
+        +'<div class="ps'+(w?' w':'')+'">'+fe(sp)+' unter Markt</div></div>'
       +'</div>'
       +'<div class="bdgs">'+tg+'</div>'
       +'<span class="chv">&#9660;</span>'
     +'</div>'
     +'<div class="cb">'
       +'<div class="pbs">'
-        +'<div class="pb"><div class="pbl">Mindestgebot</div><div class="pbv">'+fe(d.mi)+'</div><div class="trk"><div class="fil" style="width:'+pc(d.mi,d.mk)+'%;background:#58a6ff"></div></div></div>'
-        +'<div class="pb"><div class="pbl">Max.-Gebot</div><div class="pbv a">'+fe(d.ma)+'</div><div class="trk"><div class="fil" style="width:'+pc(d.ma,d.mk)+'%;background:#f0a500"></div></div></div>'
+        +'<div class="pb"><div class="pbl">Mindestgebot</div><div class="pbv">'+fe(d.mi)+'</div><div class="trk"><div class="fil" style="width:'+pct(d.mi,d.mk)+'%;background:#58a6ff"></div></div></div>'
+        +'<div class="pb"><div class="pbl">Max.-Gebot</div><div class="pbv a">'+fe(d.ma)+'</div><div class="trk"><div class="fil" style="width:'+pct(d.ma,d.mk)+'%;background:#f0a500"></div></div></div>'
         +'<div class="pb"><div class="pbl">Marktpreis</div><div class="pbv g">'+fe(d.mk)+'</div><div class="trk"><div class="fil" style="width:100%;background:#4db8a0"></div></div></div>'
       +'</div>'
       +'<div class="sb2'+(w?' w':'')+'">Bei Max.-Gebot <strong>'+spP+'% unter H&auml;ndlerpreis</strong> &mdash; Ersparnis <strong>'+fe(sp)+'</strong></div>'
       +'<div class="dg">'
         +'<div class="db"><h4>Warum bieten?</h4><p>'+d.w+'</p></div>'
         +'<div class="db"><h4>Inspektion &mdash; antippen zum Abhaken</h4><ul class="cl">'+ck+'</ul></div>'
+        +vblock
       +'</div>'
     +'</div>'
   +'</div>';
+}
+
+function buildTips(){
+  var h='<div class="section-hdr">Allgemeine Verhandlungsstrategie</div>'
+    +'<div class="tip-card"><h3>Preisdruck-Argumente fuer vor Ort</h3><ul class="tip-list">';
+  for(var i=0;i<TIPS.length;i++){
+    h+='<li><strong>'+TIPS[i].t+':</strong> '+TIPS[i].d+'</li>';
+  }
+  h+='</ul></div>';
+  return h;
 }
 
 function tog(head){
@@ -186,18 +228,29 @@ function doFilter(val,btn){
 }
 
 function render(){
+  var main=document.getElementById('main');
+  if(af==='t'){
+    main.innerHTML=buildTips();
+    document.getElementById('sb').innerHTML=
+      '<div class="sc"><div class="sv">8</div><div class="sl">Strategien</div></div>'
+     +'<div class="sc"><div class="sv">Anker</div><div class="sl">Erst setzen</div></div>'
+     +'<div class="sc"><div class="sv">10-15%</div><div class="sl">Unter Limit starten</div></div>'
+     +'<div class="sc"><div class="sv" style="color:#a371f7">Sachlich</div><div class="sl">Nicht emotional</div></div>';
+    return;
+  }
   var list=af==='all'?D:D.filter(function(d){return d.p===af;});
-  var h='';
+  var h='<div class="cards">';
   for(var i=0;i<list.length;i++) h+=bld(list[i]);
-  document.getElementById('cards').innerHTML=h;
+  h+='</div>';
+  main.innerHTML=h;
   var mas=list.map(function(d){return d.ma;});
   var sav=list.map(function(d){return d.mk-d.ma;});
   var avg=Math.round(sav.reduce(function(a,b){return a+b;},0)/sav.length);
   document.getElementById('sb').innerHTML=
     '<div class="sc"><div class="sv">'+list.length+'</div><div class="sl">Kandidaten</div></div>'
    +'<div class="sc"><div class="sv">'+fe(Math.min.apply(null,mas))+'</div><div class="sl">Niedrig. Max.</div></div>'
-   +'<div class="sc"><div class="sv">'+fe(Math.max.apply(null,mas))+'</div><div class="sl">H&ouml;chst. Max.</div></div>'
-   +'<div class="sc"><div class="sv" style="color:#4db8a0">'+fe(avg)+'</div><div class="sl">&Oslash; Ersparnis</div></div>';
+   +'<div class="sc"><div class="sv">'+fe(Math.max.apply(null,mas))+'</div><div class="sl">Hoechst. Max.</div></div>'
+   +'<div class="sc"><div class="sv" style="color:#4db8a0">'+fe(avg)+'</div><div class="sl">Ersparnis</div></div>';
 }
 
 document.addEventListener('DOMContentLoaded',function(){render();});
